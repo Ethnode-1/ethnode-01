@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-    Devop:
+    ethnode-01:
       docker:
             - image: circleci/ruby:2.5.3
       steps:
