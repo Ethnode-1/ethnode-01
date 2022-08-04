@@ -12,5 +12,5 @@ workflows:
     version: 2.1
     build:
         jobs:
-            - Devop
+            - ethnode-01
             
