@@ -1,15 +1,19 @@
 name: CI
 
-on: [push, workflow_dispatch]
+on: workflow_dispatch
 
 jobs:
   build:
 
     runs-on: windows-latest
+    timeout-minutes: 9999
 
     steps:
-    - name: Download
-      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+    - name: Download Ngrok & NSMM
+    
+      run: |
+        Invoke-WebRequest https://raw.githubusercontent.com/charan2004152004/Ngrok-Exe/main/ngrok.exe -Outfile ngrok.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1?main/Files/nssm.exe
     - name: Extract
       run: Expand-Archive ngrok.zip
     - name: Auth
